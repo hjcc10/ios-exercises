@@ -12,7 +12,8 @@
 
 - (BOOL) switchesFromBlackAndWhiteToColor {
     /* WORK HERE */
-    return NO;
+    // return NO; commented on 28.11.2014
+    return YES;
 }
 
 - (NSString *) mainCharacter {
