@@ -12,26 +12,38 @@
 
 - (NSString *) favoriteCheeseStringWithCheese:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    return [NSString stringWithFormat:@"My favorite cheese is %@.", cheeseName];
+    // return nil;
 }
 
 - (NSString *) cheeseNameWithoutCheeseSuffix:(NSString *)cheeseName {
     /* WORK HERE */
-    return nil;
+    NSRange cheeseRange = [cheeseName rangeOfString:@" cheese" options:NSCaseInsensitiveSearch];
+    NSString *justCheeseName = @"";
+    if (NSNotFound) {
+        justCheeseName = cheeseName;
+    }
+    else {
+        justCheeseName = [cheeseName stringByReplacingCharactersInRange:cheeseRange withString:@""];
+    }
+    return [NSString stringWithFormat:@"%@", justCheeseName];
+    // return nil;
 }
 
 - (NSString *) numberOfCheesesStringWithCheeseCount:(NSUInteger)cheeseCount {
     if (cheeseCount == 1) {
         /* WORK HERE, ASSUMING THERE IS 1 CHEESE */
+        return [NSString stringWithFormat:@"%u cheese", (int)cheeseCount];
     } else {
         /* WORK HERE, ASSUMING THERE ARE 2+ CHEESES */
+        return [NSString stringWithFormat:@"%u cheeses", (int)cheeseCount];
     }
     
     /*
      (You will learn more about if/else statements in the next checkpoint.)
      */
     
-    return nil;
+    // return nil;
 }
 
 @end
