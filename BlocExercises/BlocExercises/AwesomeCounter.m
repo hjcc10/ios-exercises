@@ -12,7 +12,27 @@
 
 - (NSString *) stringWithNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
     /* WORK HERE */
-    return @"";
+    
+    NSInteger lowestNumber = 0;
+    NSInteger highestNumber = 0;
+    NSString *stringFinal = @"";
+    NSString *stringPartial = @"";
+    
+    if (number < otherNumber) {
+        lowestNumber = number;
+        highestNumber = otherNumber;
+    } else {
+        lowestNumber = otherNumber;
+        highestNumber = number;
+    }
+    
+    for (NSInteger counter = lowestNumber; counter <= highestNumber; ++counter) {
+        stringPartial = [NSString stringWithFormat:@"%ld", counter];
+        stringFinal = [stringFinal stringByAppendingString: stringPartial];
+    }
+    return stringFinal;
+    
+    // return @"";
 }
 
 @end
