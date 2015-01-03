@@ -62,12 +62,24 @@
      @return @c YES if Worf is present in the array, or @c NO if he is not.
      */
     
+    /* Another solution
+    NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
+    NSArray *myArray = [characterArray filteredArrayUsingPredicate:containsWorf];
+    BOOL thereIsWorf = NO;
+    for (NSInteger i = 0; (i < myArray.count && thereIsWorf == NO); i++) {
+        thereIsWorf = [characterArray containsObject: myArray[i]];
+    }
+    return thereIsWorf;
+    */
+     
+    /* Used solution in the course*/
     NSPredicate *containsWorf = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'Worf'"];
     NSArray *myArray = [characterArray filteredArrayUsingPredicate:containsWorf];
     if (myArray.count > 0) {
         return YES;
     }
     return NO;
+    
 }
 
 @end
