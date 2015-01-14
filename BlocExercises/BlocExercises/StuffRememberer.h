@@ -31,6 +31,10 @@
  
  @param arrayToRemember A mutable array.
  */
+
+@property(assign) NSMutableArray* rememberArray;
+@property(assign) CGFloat rememberFloat;
+
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember;
 
 /**
